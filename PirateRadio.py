@@ -1,34 +1,3 @@
-#!/usr/bin/env python
-# Pirate Radio
-# Author: Wynter Woods (Make Magazine)
-
-try:	# the following tests for a python3.x module
-	import configparser
-except: # if the module isn't found, we're likely running python2.x and will just trick it into working
-	import ConfigParser as configparser
-finally:
-	import re
-	import re
-	import random
-	import sys
-	import os
-	import threading
-	import time
-	import subprocess
-
-fm_process = None
-on_off = ["off", "on"]
-config_location = "/pirateradio/pirateradio.conf"
-
-frequency = 87.9
-shuffle = False
-repeat_all = False
-merge_audio_in = False
-play_stereo = True
-music_dir = "/pirateradio"
-
-music_pipe_r,music_pipe_w = os.pipe()
-microphone_pipe_r,microphone_pipe_w = os.pipe()
 
 def main():
 	daemonize()
